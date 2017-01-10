@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body{
+    height:100%;
+}
+body{
+    background-color: #f4f6f6
+}
+
+.main-nav{
+    background-color:#336E7B;
+    height:50px;
+}
+
+.main-nav .uk-navbar-item{
+    color:white;    
+}
+
+.uk-margin{
+    margin-bottom: 10px;
+}
+
+.uk-iconnav{
+    background-color: gray;
+}

@@ -4,13 +4,12 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "start": "node server.js",
+    "start": "ng serve",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor"
   },
-  "main": "server.js",
   "private": true,
   "dependencies": {
     "@angular/common": "~2.1.0",

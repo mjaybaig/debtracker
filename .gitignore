@@ -1,12 +1,13 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# source files
-/app
+# production files
+/dist
 /tmp
 
 # dependencies
 /node_modules
 /bower_components
+/src/assets/vendor
 
 # IDEs and editors
 /.idea

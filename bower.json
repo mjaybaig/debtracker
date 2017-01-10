@@ -1,0 +1,20 @@
+{
+  "name": "debttracker",
+  "description": "app to track debts",
+  "main": "server.js",
+  "authors": [
+    "M. Jameel Baig <mjameelbaig@hotmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "uikit": "^2.27.2"
+  }
+}
