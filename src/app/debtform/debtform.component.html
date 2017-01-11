@@ -1,0 +1,43 @@
+<div [ngSwitch]="debtType">
+  <div *ngSwitchCase="'theirdebt'">
+    <form [formGroup]="debtForm" class="uk-grid-small" (ngSubmit)="onSubmit(debtForm.value)" uk-grid>
+          <div class="uk-width-1-1">
+            <input class="uk-input" id="owedby" name="owedby" placeholder="Who owes you?" [formControl]="debtForm.controls['owedby']" type="text">
+          </div>
+          <div class="uk-width-1-2@s">
+            <input class="uk-input" id="amount" name="amount" placeholder="Enter the Amount" [formControl]="debtForm.controls['amount']" type="number">
+          </div>
+          <div class="uk-width-1-2@s">
+            <input class="uk-input" id="datecreated" name="datecreated" placeholder="Enter the Date it was incurred" [formControl]="debtForm.controls['datecreated']" type="date">
+          </div>
+          <div class="uk-width-1-1">
+            <textarea class="uk-textarea" rows="2" id="desc" name="desc" placeholder="Provide a brief description of this debt" [formControl]="debtForm.controls['desc']"></textarea>
+          </div>
+          <div class="uk-width-1-1">
+            <button type="submit" class="uk-button uk-button-primary uk-align-right">Submit</button>
+            <button (click)="cancel()" type="button" class="uk-button uk-align-right">Cancel</button>
+          </div>
+          <!--<div class="uk-width-1-4@s">-->
+          <!--</div>-->
+    </form>
+  </div>
+  <div *ngSwitchCase="'mydebt'">
+    <form [formGroup]="debtForm" class="uk-grid-small" (ngSubmit)="onSubmit(debtForm.value)" uk-grid>
+          <div class="uk-width-1-1">
+            <input class="uk-input" id="owedby" name="owedby" placeholder="Who do you owe?" [formControl]="debtForm.controls['owedby']" type="text">
+          </div>
+          <div class="uk-width-1-2@s">
+            <input class="uk-input" id="amount" name="amount" placeholder="Enter the Amount" [formControl]="debtForm.controls['amount']" type="number">
+          </div>
+          <div class="uk-width-1-2@s">
+            <input class="uk-input" id="datecreated" name="datecreated" placeholder="Enter the Date it was incurred" [formControl]="debtForm.controls['datecreated']" type="date">
+          </div>
+          <div class="uk-width-1-1">
+            <textarea class="uk-textarea" rows="2" id="desc" name="desc" placeholder="Provide a brief description of this debt" [formControl]="debtForm.controls['desc']"></textarea>
+          </div>
+          <div class="uk-width-1-1">
+            <button type="submit" class="uk-button uk-button-primary uk-align-right">Submit</button>
+            <button (click)="cancel()" type="button" class="uk-button uk-align-right">Cancel</button>
+          </div>
+    </form>
+  </div>

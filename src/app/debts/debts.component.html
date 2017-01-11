@@ -5,13 +5,19 @@
         <nav class="uk-navbar uk-margin" uk-navbar>
           <div class="uk-navbar-center">
             <ul class="uk-navbar-nav">
-              <li><a href="#">Create New</a></li>
+              <li>
+                <a (click)="toggleSentForm()" href>Create New</a>
+              </li>
               <li><a href="#">View All</a></li>
               <li><a href="#">View Closed</a></li>
               <li><a href="#">View Open</a></li>
             </ul>
           </div>
         </nav>
+        <div *ngIf="showSentForm" class="uk-card uk-card-body uk-card-default">
+          <a href (click)="toggleSentForm()" class="uk-modal-close-default" uk-close></a>
+          <app-debtform debtType="mydebt" (cancelbtn) = "toggleSentForm()"></app-debtform>
+        </div>
       </div>
   </div>
   <div class="uk-width-1-2">
@@ -20,13 +26,19 @@
         <nav class="uk-navbar uk-margin" uk-navbar>
           <div class="uk-navbar-center">
             <ul class="uk-navbar-nav">
-              <li><a href="#">Create New</a></li>
+              <li>
+                <a (click)="toggleRecvForm()"href>Create New</a>
+              </li>
               <li><a href="#">View All</a></li>
               <li><a href="#">View Closed</a></li>
               <li><a href="#">View Open</a></li>
             </ul>
           </div>
         </nav>
+        <div *ngIf="showRecvForm" class="uk-card uk-card-body uk-card-default">
+          <a href (click)="toggleRecvForm()" class="uk-modal-close-default" uk-close></a>
+          <app-debtform debtType="theirdebt" (cancelbtn) = "toggleRecvForm()"></app-debtform>
+        </div>
       </div>
   </div>
 </div>
