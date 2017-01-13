@@ -6,12 +6,16 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { DebtsComponent } from './debts/debts.component';
 import { DebtformComponent } from './debtform/debtform.component';
+import { DebtlistingComponent } from './debtlisting/debtlisting.component';
+
+import './rxjs-operators';
 
 @NgModule({
   declarations: [
     AppComponent,
     DebtsComponent,
-    DebtformComponent
+    DebtformComponent,
+    DebtlistingComponent
   ],
   imports: [
     BrowserModule,

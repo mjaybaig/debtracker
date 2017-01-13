@@ -1,12 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body{
+/*html, body{
     height:100%;
-}
-body{
-    background-color: #f4f6f6
+}*/
+/*body{
+    background-color: #f4f6f6;
+}*/
+
+.uk-max-height-large{
+    max-height: 580px;
+    overflow-y: scroll;
 }
 
+.app-container{
+    background-color: #f4f6f6;
+}
 .main-nav{
     background-color:#336E7B;
     height:50px;
