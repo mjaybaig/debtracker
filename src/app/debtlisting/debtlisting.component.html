@@ -1,16 +1,27 @@
 <div *ngIf="!debts || debts.length<=0">
   <p>No data</p>
 </div>
-
-<div class=" uk-max-height-large">
+<div class="uk-container">
+  <nav class="uk-navbar uk-margin" uk-navbar>
+    <div class="uk-navbar-center">
+      <ul class="uk-navbar-nav">
+        <li><a (click)="createNew()">Create New</a></li>
+        <li><a (click)="allDebts()" href="#">View All</a></li>
+        <li><a (click)="closeDebts()" href="#">View Closed</a></li>
+        <li><a (click)="openDebts()" href="#">View Open</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<div class="uk-max-height-large">
   <div *ngIf="debtType == 'byme'">
     <div class="uk-container">
-      <div *ngFor="let debt of debts">
+      <div *ngFor="let debt of debtView">
         <div class="uk-text-left uk-card uk-card-default uk-card-body uk-margin-top uk-width-1-1">
           <div class="uk-grid">
             <div class="uk-card-badge uk-label">Badge</div>
             <h3 class="uk-width-1-2 uk-card-title">{{debt.amount | currency:'PKR' : 2}}</h3>
-            <h5 class="uk-width-1-2 uk-text-right">Owed by {{debt.owedby}}</h5>
+            <h5 class="uk-width-1-2 uk-text-right">Owed to {{debt.owedby}}</h5>
           </div>
           <p>{{debt.desc}}</p>
         </div>
@@ -21,7 +32,18 @@
     </p>
   </div>
   <div *ngIf="debtType == 'tome'">
-    <p>Debts owed to me</p>
+    <div class="uk-container">
+      <div *ngFor="let debt of debtView">
+        <div class="uk-text-left uk-card uk-card-default uk-card-body uk-margin-top uk-width-1-1">
+          <div class="uk-grid">
+            <div class="uk-card-badge uk-label">Badge</div>
+            <h3 class="uk-width-1-2 uk-card-title">{{debt.amount | currency:'PKR' : 2}}</h3>
+            <h5 class="uk-width-1-2 uk-text-right">Owed by {{debt.owedby}}</h5>
+          </div>
+          <p>{{debt.desc}}</p>
+        </div>
+      </div>
+    </div>
     <p *ngIf="errorMessage && errorMessage.length > 0">
       {{errorMessage}}
     </p>

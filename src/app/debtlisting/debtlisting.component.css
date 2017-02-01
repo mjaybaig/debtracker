@@ -1,8 +1,15 @@
 .uk-card-badge {
     top: 5px;
     right: 5px;
+    z-index: 0;
 }
 .uk-card{
     padding-left:20px;
     padding-right:20px;
+}
+
+.uk-max-height-large{
+    max-height: 580px;
+    overflow-y: auto;
+    padding-bottom: 15px;
 }

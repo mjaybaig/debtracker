@@ -1,42 +1,20 @@
 <div class="uk-grid-divider uk-child-width-expand@s uk-text-center uk-grid">
   <div class="uk-width-1-2">
     <h3 class="uk-heading-line uk-text-center">Debts sent</h3>
-    <div class="uk-container"> 
-      <nav class="uk-navbar uk-margin" uk-navbar>
-        <div class="uk-navbar-center">
-          <ul class="uk-navbar-nav">
-            <li>
-              <a (click)="toggleSentForm()" href>Create New</a>
-            </li>
-            <li><a href="#">View All</a></li>
-            <li><a href="#">View Closed</a></li>
-            <li><a href="#">View Open</a></li>
-          </ul>
-        </div>
-      </nav>
-      <div *ngIf="showSentForm" class="uk-card uk-card-body uk-card-default">
-        <a href (click)="toggleSentForm()" class="uk-modal-close-default" uk-close></a>
-        <app-debtform debtType="mydebt" (cancelbtn) = "toggleSentForm()"></app-debtform>
-      </div>
-    </div>
     <!--Show debts by me here-->
-    <app-debtlisting [debts]='debts' debtType='byme'></app-debtlisting>
+    <app-debtlisting [debts]='debts' (newdebt)="toggleSentForm()" debtType='byme' [listingtype]='listingtype'></app-debtlisting>
+    <!--<div class="uk-container"> -->
+      <div *ngIf="showSentForm" class="uk-position-small uk-position-top uk-overlay uk-overlay-default">
+        <div class="uk-card uk-card-default uk-card-body">
+          <a href (click)="toggleSentForm()" class="uk-modal-close-default" uk-close></a>
+          <app-debtform debtType="mydebt" (cancelbtn) = "toggleSentForm()"></app-debtform>
+        </div>
+      </div>
+    <!--</div>-->
   </div>
   <div class="uk-width-1-2">
     <h3 class="uk-heading-line uk-text-center">Debts received</h3>
     <div class="uk-container"> 
-      <nav class="uk-navbar uk-margin" uk-navbar>
-        <div class="uk-navbar-center">
-          <ul class="uk-navbar-nav">
-            <li>
-              <a (click)="toggleRecvForm()"href>Create New</a>
-            </li>
-            <li><a href="#">View All</a></li>
-            <li><a href="#">View Closed</a></li>
-            <li><a href="#">View Open</a></li>
-          </ul>
-        </div>
-      </nav>
       <div *ngIf="showRecvForm" class="uk-card uk-card-body uk-card-default">
         <a href (click)="toggleRecvForm()" class="uk-modal-close-default" uk-close></a>
         <app-debtform debtType="theirdebt" (cancelbtn) = "toggleRecvForm()"></app-debtform>

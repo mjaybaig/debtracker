@@ -16,6 +16,8 @@ export class DebtsComponent implements OnInit {
   private showSentForm:boolean = false;
   private showRecvForm:boolean = false;
 
+  listingtype:string = 'alldebts';
+
   @Input() debtType:string;
   errorMessage:string;
 
@@ -23,6 +25,11 @@ export class DebtsComponent implements OnInit {
 
   @Input() temp:string;
 
+
+  setlistingtype(t:string){
+    this.listingtype = t;
+    console.log(this.listingtype);
+  }
 
   toggleSentForm(){
     this.showSentForm = !this.showSentForm;
@@ -42,6 +49,7 @@ export class DebtsComponent implements OnInit {
                           }
                         );
   }
+
   ngOnInit() {
     this.getDebts();
   }
